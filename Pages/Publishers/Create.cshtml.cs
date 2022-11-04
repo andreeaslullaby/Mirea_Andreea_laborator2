@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Mirea_Andreea_lab2.Data;
 using Mirea_Andreea_lab2.Models;
 
-namespace Mirea_Andreea_lab2.Pages.Books
+namespace Mirea_Andreea_lab2.Pages.Publishers
 {
     public class CreateModel : PageModel
     {
@@ -21,12 +21,11 @@ namespace Mirea_Andreea_lab2.Pages.Books
 
         public IActionResult OnGet()
         {
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
             return Page();
         }
 
         [BindProperty]
-        public Book Book { get; set; }
+        public Publisher Publisher { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -37,7 +36,7 @@ namespace Mirea_Andreea_lab2.Pages.Books
                 return Page();
             }
 
-            _context.Book.Add(Book);
+            _context.Publisher.Add(Publisher);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
