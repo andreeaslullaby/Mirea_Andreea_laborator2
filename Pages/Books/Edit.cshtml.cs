@@ -25,17 +25,17 @@ namespace Mirea_Andreea_lab2.Pages.Books
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Book == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var book =  await _context.Book.FirstOrDefaultAsync(m => m.ID == id);
-            if (book == null)
+       Book =  await _context.Book.FirstOrDefaultAsync(m => m.ID == id);
+            if (Book == null)
             {
                 return NotFound();
             }
-            Book = book;
+            Book = Book;
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
             return Page();
         }
@@ -66,7 +66,7 @@ namespace Mirea_Andreea_lab2.Pages.Books
                     throw;
                 }
             }
-            try again
+  
 
 
             return RedirectToPage("./Index");
