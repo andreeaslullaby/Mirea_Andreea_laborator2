@@ -18,11 +18,6 @@ namespace Mirea_Andreea_lab2.Pages.Publishers
 
         public async Task OnGetAsync()
         {
-            {
-                Book = await _context.Book
-                    .Include(b => b.Publisher)
-                    .ToListAsync();
-            }
         if (_context.Publisher != null)
             {
                 Publisher = await _context.Publisher.ToListAsync();
