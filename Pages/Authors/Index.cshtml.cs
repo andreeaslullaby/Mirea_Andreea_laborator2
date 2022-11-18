@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Mirea_Andreea_lab2.Data;
 using Mirea_Andreea_lab2.Models;
 
-namespace Mirea_Andreea_lab2.Pages.Books
+namespace Mirea_Andreea_lab2.Pages.Authors
 {
     public class IndexModel : PageModel
     {
@@ -19,15 +19,13 @@ namespace Mirea_Andreea_lab2.Pages.Books
             _context = context;
         }
 
-        public IList<Book> Book { get;set; } = default!;
+        public IList<Author> Author { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Book != null)
+            if (_context.Author != null)
             {
-                Book = await _context.Book
-                    .Include(b => b.Publisher)
-                    .ToListAsync();
+                Author = await _context.Author.ToListAsync();
             }
         }
     }
