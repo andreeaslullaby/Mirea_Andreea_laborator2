@@ -20,6 +20,8 @@ namespace Mirea_Andreea_lab2.Models
 
         public int? AuthorID { get; set; } 
         public Author? Author { get; set; } //navigation property
+
+       
        
 
     }
