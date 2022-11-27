@@ -8,7 +8,7 @@ namespace Mirea_Andreea_lab2.Pages.Publishers
     public class IndexModel : PageModel
     {
         private readonly Mirea_Andreea_lab2.Data.Mirea_Andreea_lab2Context _context;
-        private object await_context;
+      
 
         public IndexModel(Mirea_Andreea_lab2.Data.Mirea_Andreea_lab2Context context)
         {
